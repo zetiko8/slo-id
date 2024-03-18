@@ -710,7 +710,6 @@ export const ADDRESSES = [
   'Žibernik 17, 3250 Rogaška Slatina',
   'Ravne 173 B, 3325 Šoštanj',
   'Loška Gora 3, 1433 Radeče',
-  '41 Hoćlsmere Close, Halling, Me2Inf Rochester',
   'Dragarjeva Ulica 14, 1230 Domžale',
   'Kolodvorska Cesta 1, 1410 Zagorje Ob Savi',
   'Stražišče 20 C, 2390 Ravne Na Koroškem',

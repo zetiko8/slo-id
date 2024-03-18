@@ -12,15 +12,34 @@ import { MALE_NAMES, FEMALE_NAMES } from './data/data';
 import { ERROR } from './ERROR';
 import { getRandomBit } from './helpers';
 import { MobileNumberOptions, generateMobileNumber } from './mobile-number';
+import { generateAddress } from './address';
 
 export { GENDER, GenerativeData };
+
+export interface MockPersonSLO {
+  davcnaStevilka: string;
+  datumRojstva: string;
+  ime: string;
+  priimek: string;
+  mobitel: string;
+  ulica: string;
+  postnaStevilka: string;
+  kraj: string;
+  email: string;
+  spol: 'M' | 'Ž',
+}
 
 export interface MockPerson {
   birthDate: BirthDate;
   email: string;
   name: { firstName: string; surname: string };
   gender: GENDER;
-  mobileNumber: string,
+  mobileNumber: string;
+  address: {
+    street: string;
+    zipCode: string;
+    city: string;
+  };
 }
 
 export interface MockPersonOptions {
@@ -33,9 +52,11 @@ export interface MockPersonOptions {
     surname?: string;
   };
   mobileNumber: MobileNumberOptions;
-  ulica: string;
-  postnaStevilka: string;
-  kraj: string;
+  address: {
+    street?: string;
+    zipCode?: string;
+    city?: string;
+  };
   email: EmailOptions;
   gender: GENDER;
 }
@@ -65,6 +86,7 @@ export const getMockPerson = (
     name: nameObject,
     gender,
     mobileNumber: generateMobileNumber(options.mobileNumber),
+    address: generateAddress(options.address || {}),
   };
 };
 
