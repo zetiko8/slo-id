@@ -13,6 +13,7 @@ import { ERROR } from './ERROR';
 import { getRandomBit } from './helpers';
 import { MobileNumberOptions, generateMobileNumber } from './mobile-number';
 import { generateAddress } from './address';
+import { generateVatId } from './vat-id';
 
 export { GENDER, GenerativeData };
 
@@ -26,7 +27,7 @@ export interface MockPersonSLO {
   postnaStevilka: string;
   kraj: string;
   email: string;
-  spol: 'M' | 'Ž',
+  spol: 'M' | 'Ž';
 }
 
 export interface MockPerson {
@@ -40,6 +41,7 @@ export interface MockPerson {
     zipCode: string;
     city: string;
   };
+  vatId: string;
 }
 
 export interface MockPersonOptions {
@@ -59,6 +61,7 @@ export interface MockPersonOptions {
   };
   email: EmailOptions;
   gender: GENDER;
+  vatId: string;
 }
 
 export const getMockPerson = (
@@ -87,6 +90,7 @@ export const getMockPerson = (
     gender,
     mobileNumber: generateMobileNumber(options.mobileNumber),
     address: generateAddress(options.address || {}),
+    vatId: options.vatId || generateVatId(),
   };
 };
 

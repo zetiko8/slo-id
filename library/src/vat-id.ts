@@ -10,7 +10,7 @@ export function generateVatId() {
   controlNumber = 11 - (controlNumber % 11);
   if (controlNumber == 10) {
     controlNumber = 0;
-  } //tako je pravilo
+  }
   if (controlNumber == 11) {
     return generateVatId();
   } // repeat to randomly find a good vatId
