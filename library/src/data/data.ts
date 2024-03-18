@@ -368,7 +368,6 @@ export const FEMALE_NAMES = [
   'Andrejka',
   'Jelena',
   'Marjanca',
-  'Ana Marija',
   'Irma',
   'Stanka',
   'Lilijana',
