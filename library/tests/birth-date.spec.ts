@@ -82,4 +82,10 @@ describe('birthDate', () => {
       );
     });
   });
+  describe.skip('minAge, maxAge', () => { /** TODO */});
+  describe.skip('Date()', () => { /** TODO */});
+  describe.skip('from', () => { /** TODO */});
+  describe.skip('to', () => { /** TODO */});
+  describe.skip('from,to', () => { /** TODO */});
+  describe.skip('valid options', () => { /** TODO */});
 });
