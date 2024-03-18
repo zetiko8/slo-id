@@ -1,7 +1,5 @@
-import * as moment from 'moment';
 import { getMockPerson } from '../src';
 import { ERROR } from '../src/ERROR';
-import * as joi from 'joi';
 import { isValidEmail } from './test.helpers';
 
 describe('email', () => {
