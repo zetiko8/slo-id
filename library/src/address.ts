@@ -14,9 +14,9 @@ export function generateAddress(options: {
     String(Math.floor(1 + Math.random() * 32)),
   );
 
-  let street = full.split(',')[0].toUpperCase();
-  let zipCode = full.split(',')[1].split(' ')[1].toUpperCase();
-  let city = full.split(',')[1].split(' ')[2].toUpperCase();
+  let street = full.split(',')[0];
+  let zipCode = full.split(',')[1].split(' ')[1];
+  let city = full.split(',')[1].split(' ')[2];
 
   if (
     options.street &&
