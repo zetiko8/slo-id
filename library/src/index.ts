@@ -11,6 +11,7 @@ import { GENDER, GenerativeData } from './types';
 import { MALE_NAMES, FEMALE_NAMES } from './data/data';
 import { ERROR } from './ERROR';
 import { getRandomBit } from './helpers';
+import { MobileNumberOptions, generateMobileNumber } from './mobile-number';
 
 export { GENDER, GenerativeData };
 
@@ -19,6 +20,7 @@ export interface MockPerson {
   email: string;
   name: { firstName: string; surname: string };
   gender: GENDER;
+  mobileNumber: string,
 }
 
 export interface MockPersonOptions {
@@ -30,7 +32,7 @@ export interface MockPersonOptions {
     firstName?: string;
     surname?: string;
   };
-  mobitel: string;
+  mobileNumber: MobileNumberOptions;
   ulica: string;
   postnaStevilka: string;
   kraj: string;
@@ -62,6 +64,7 @@ export const getMockPerson = (
     ),
     name: nameObject,
     gender,
+    mobileNumber: generateMobileNumber(options.mobileNumber),
   };
 };
 

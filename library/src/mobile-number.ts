@@ -1,6 +1,11 @@
+import { ERROR } from './ERROR';
 import { getRandomElementOfArray } from './helpers';
 
-export function generateMobileNumber(options: { withCountryCode: boolean }) {
+export type MobileNumberOptions = string | { withCountryCode: boolean };
+
+export function generateMobileNumber(
+  options: MobileNumberOptions = '',
+): string {
   const prefixes = ['040', '041', '070', '051', '031'];
   const prefix = getRandomElementOfArray(prefixes);
 
@@ -12,9 +17,15 @@ export function generateMobileNumber(options: { withCountryCode: boolean }) {
     mobileNumber += Math.floor(Math.random() * 10).toString();
   }
 
-  if (options.withCountryCode) {
-    return '00386' + mobileNumber.substring(1, mobileNumber.length);
+  if (options !== '') {
+    if (typeof options === 'string') {
+      return options;
+    } else if ((options as { withCountryCode: boolean })?.withCountryCode) {
+      return '+386' + mobileNumber
+        .substring(1, mobileNumber.length)
+        .replace(/\s/g, '');
+    } else throw Error(ERROR.mobileNumberValue);
   } else {
-    return mobileNumber;
+    return mobileNumber.replace(/\s/g, '');
   }
 }

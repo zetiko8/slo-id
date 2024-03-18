@@ -5,6 +5,7 @@ export const ERROR = {
     minAge: 'Invalid input for "birthDate#minAge"',
   },
   gender: 'Invalid input for "gender"',
+  mobileNumberValue: 'Invalid input for "mobileNumber"',
   emailValue: 'Invalid input for "email"',
   email: {
     baseEmail: 'Invalid input for "email#baseEmail"',
