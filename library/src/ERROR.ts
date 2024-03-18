@@ -4,4 +4,8 @@ export const ERROR = {
     maxAge: 'Invalid input for "birthDate#maxAge"',
     minAge: 'Invalid input for "birthDate#minAge"',
   },
+  emailValue: 'Invalid input for "email"',
+  email: {
+    baseEmail: 'Invalid input for "email#baseEmail"',
+  },
 };

@@ -199,7 +199,6 @@ export const SURNAMES = [
   'Rojc',
   'Založnik',
   'Smrekar',
-  '',
 ];
 
 export const FEMALE_NAMES = [
@@ -453,7 +452,6 @@ export const FEMALE_NAMES = [
   'Staša',
   'Leopoldina',
   'Dunja',
-  '',
 ];
 
 export const MALE_NAMES  = [
@@ -707,7 +705,6 @@ export const MALE_NAMES  = [
   'Henrik',
   'Branimir',
   'Adnan',
-  '',
 ];
 
 export const ADDRESSES = [
@@ -1211,5 +1208,4 @@ export const ADDRESSES = [
   'Križevci 137 A, 9206 Križevci',
   'Kristan Vrh 43, 3241 Podplat',
   'Murski Črnci 54 H, 9251 Tišina',
-  '',
 ];

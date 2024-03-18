@@ -7,20 +7,20 @@ export interface PersonName {
   surname: string;
 }
 
-export interface NAME_OPTIONS {
+export interface NameOptions {
   gender: GENDER;
-  numberOfSurnames: number;
-  numberOfNames: number;
-  data: PersonName;
+  numberOfSurnames?: number;
+  numberOfNames?: number;
+  data?: PersonName;
 }
 
-export function generateName(options: NAME_OPTIONS): PersonName {
-  const surname = getNameElement(SURNAMES, options.numberOfSurnames);
+export function generateName(options: NameOptions): PersonName {
+  const surname = getNameElement(SURNAMES, options.numberOfSurnames || 1);
 
   const firstName =
     options.gender === GENDER.F
-      ? getNameElement(FEMALE_NAMES, options.numberOfNames)
-      : getNameElement(MALE_NAMES, options.numberOfNames);
+      ? getNameElement(FEMALE_NAMES, options.numberOfNames || 1)
+      : getNameElement(MALE_NAMES, options.numberOfNames || 1);
 
   return {
     surname,

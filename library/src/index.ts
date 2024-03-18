@@ -5,9 +5,13 @@ import {
   getAge,
   toDDMMYYYY,
 } from './bith-date';
+import { EmailOptions, generateEmail } from './email';
+import { generateName } from './name';
+import { GENDER } from './types';
 
 export interface MockPerson {
   birthDate: BirthDate;
+  email: string;
 }
 
 export interface MockPersonOptions {
@@ -19,15 +23,24 @@ export interface MockPersonOptions {
   ulica: string;
   postnaStevilka: string;
   kraj: string;
-  email: string;
+  email: EmailOptions;
   spol: 'M' | 'Ž';
 }
 
 export const getMockPerson = (
   options: Partial<MockPersonOptions> = {},
 ): MockPerson => {
+  const gender = GENDER.M;
+  const nameObject = generateName({
+    gender,
+  });
   return {
     birthDate: getBirthDate(options.birthDate),
+    email: generateEmail(
+      nameObject.firstName,
+      nameObject.surname,
+      options.email,
+    ),
   };
 };
 
