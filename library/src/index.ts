@@ -18,6 +18,7 @@ export interface MockPerson {
   birthDate: BirthDate;
   email: string;
   name: { firstName: string; surname: string };
+  gender: GENDER;
 }
 
 export interface MockPersonOptions {
@@ -60,6 +61,7 @@ export const getMockPerson = (
       options.email,
     ),
     name: nameObject,
+    gender,
   };
 };
 
