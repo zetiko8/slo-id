@@ -1,6 +1,6 @@
 {
-  "name": "slo-id",
-  "version": "0.10.0",
+  "name": "@zetiko8/slo-id",
+  "version": "0.3.0",
   "description": "Get fake slovenian data",
   "author": "Anže Kolšek <anze.kolsek@gmail.com>",
   "license": "MIT",

@@ -1,6 +1,6 @@
 {
-  "name": "slo-id-workspace",
-  "version": "0.1.0",
+  "name": "@zetiko8/slo-id-workspace",
+  "version": "0.2.0",
   "license": "MIT",
   "scripts": {
     "clean": "shx rm -rf ./library/dist",

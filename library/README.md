@@ -1,15 +1,15 @@
-# slo-id
+# @zetiko8/slo-id
 
 Generate fake slovenian people for testing.
 
 ## Getting started
 
 ```bash
-npm i slo-id
+npm i @zetiko8/slo-id
 ```
 
 ```typescript
-import { getMockPerson } from 'slo-id';
+import { getMockPerson } from '@zetiko8/slo-id';
 
 describe('test', () => {
     it('produces a person', () => {
@@ -34,7 +34,7 @@ describe('test', () => {
 
 ## Api reference
 ```typescript
-import { getMockPerson } from 'slo-id';
+import { getMockPerson } from '@zetiko8/slo-id';
 
 const person = getMockPerson({
     // optional options object

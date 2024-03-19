@@ -1,11 +1,11 @@
-# slo-id Workspace
+# @zetiko8/slo-id Workspace
 
 Uses nx
 > https://nx.dev/
 
-## Library
+## Documentation
 
-> see `library/README.md`
+[Documentation](library/README.md)
 
 ### Development
 
