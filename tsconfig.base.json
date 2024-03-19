@@ -26,7 +26,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@zetiko8/rombok": ["library/src/index.ts"]
+      "@zetiko8/slo-id": ["library/src/index.ts"]
     }
   },
   "exclude": [

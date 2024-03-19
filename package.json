@@ -1,6 +1,6 @@
 {
   "name": "slo-id-workspace",
-  "version": "0.9.1",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "clean": "shx rm -rf ./library/dist",

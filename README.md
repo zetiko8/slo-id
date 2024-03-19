@@ -1,4 +1,4 @@
-# Rombok Workspace
+# slo-id Workspace
 
 Uses nx
 > https://nx.dev/
