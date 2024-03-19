@@ -5,7 +5,7 @@ Generate fake slovenian people for testing.
 ## Getting started
 
 ```bash
-`npm i slo-id`
+npm i slo-id
 ```
 
 ```typescript
