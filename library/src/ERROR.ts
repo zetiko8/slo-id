@@ -6,6 +6,10 @@ export const ERROR = {
   },
   gender: 'Invalid input for "gender"',
   mobileNumberValue: 'Invalid input for "mobileNumber"',
+  ibanValue: 'Invalid input for "iban"',
+  iban: {
+    data: 'Invalid input for "iban#data"',
+  },
   emailValue: 'Invalid input for "email"',
   email: {
     baseEmail: 'Invalid input for "email#baseEmail"',

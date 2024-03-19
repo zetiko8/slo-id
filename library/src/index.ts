@@ -10,26 +10,13 @@ import { generateName } from './name';
 import { GENDER, GenerativeData } from './types';
 import { MALE_NAMES, FEMALE_NAMES } from './data/data';
 import { ERROR } from './ERROR';
-import { getRandomBit } from './helpers';
+import { getRandomBit, getRandomElementOfArray } from './helpers';
 import { MobileNumberOptions, generateMobileNumber } from './mobile-number';
 import { generateAddress } from './address';
 import { generateVatId } from './vat-id';
+import { generateIban } from './iban';
 
 export { GENDER, GenerativeData };
-
-export interface MockPersonSLO {
-  davcnaStevilka: string;
-  datumRojstva: string;
-  ime: string;
-  priimek: string;
-  mobitel: string;
-  ulica: string;
-  postnaStevilka: string;
-  kraj: string;
-  email: string;
-  spol: 'M' | 'Ž';
-}
-
 export interface MockPerson {
   birthDate: BirthDate;
   email: string;
@@ -42,6 +29,7 @@ export interface MockPerson {
     city: string;
   };
   vatId: string;
+  iban: string;
 }
 
 export interface MockPersonOptions {
@@ -62,6 +50,7 @@ export interface MockPersonOptions {
   email: EmailOptions;
   gender: GENDER;
   vatId: string;
+  iban: string | { data: string[] };
 }
 
 export const getMockPerson = (
@@ -91,8 +80,21 @@ export const getMockPerson = (
     mobileNumber: generateMobileNumber(options.mobileNumber),
     address: generateAddress(options.address || {}),
     vatId: options.vatId || generateVatId(),
+    iban: getIban(options.iban),
   };
 };
+
+function getIban(options?: string | { data: string[] }): string {
+  if (options === '') throw Error(ERROR.ibanValue);
+  if (typeof options === 'string' && options !== '') {
+    return options;
+  } else if (options !== undefined && options !== '') {
+    const opts = options as { data: string[] };
+    if (!Array.isArray(opts.data) || !opts.data.length)
+      throw Error(ERROR.iban.data);
+    return getRandomElementOfArray(opts.data);
+  } else return generateIban();
+}
 
 function getBirthDate(
   options?: BirthDateOptions | Date | BirthDate,
