@@ -44,6 +44,7 @@ describe('email', () => {
       });
       expect(person.email.startsWith('test.email+')).toBe(true);
       expect(person.email.endsWith('gmail.com')).toBe(true);
+      expect(isValidEmail(person.email)).toBeTruthy();
     });
     it('handles invalid inputs', () => {
       [null, 5.4, new Date(), NaN, Infinity, {}, 'withoutafna', ''].forEach(
