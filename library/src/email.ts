@@ -21,7 +21,7 @@ export function generateEmail(
     if (!opts.baseEmail.includes('@')) throw ERROR.email.baseEmail;
 
     const split = opts.baseEmail.split('@');
-    return [split[0], '+', nameForEmail, '.', surnameForEmail, split[1]].join(
+    return [split[0], '+', nameForEmail, '.', surnameForEmail, '@', split[1]].join(
       '',
     );
   }
