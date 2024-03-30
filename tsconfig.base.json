@@ -27,7 +27,8 @@
     "baseUrl": ".",
     "paths": {
       "@zetiko8/slo-id": ["library/src/index.ts"]
-    }
+    },
+    "esModuleInterop": true
   },
   "exclude": [
     "node_modules", 
