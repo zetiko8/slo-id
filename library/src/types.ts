@@ -4,6 +4,7 @@ export enum GENDER {
 }
 
 export interface GenerativeData {
-  MALE_NAMES: string[];
-  FEMALE_NAMES: string[];
+  MALE_NAMES?: string[];
+  FEMALE_NAMES?: string[];
+  ADDRESSES?: string[];
 }

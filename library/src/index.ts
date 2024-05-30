@@ -8,7 +8,7 @@ import {
 import { EmailOptions, generateEmail } from './email';
 import { generateName } from './name';
 import { GENDER, GenerativeData } from './types';
-import { MALE_NAMES, FEMALE_NAMES } from './data/data';
+import { MALE_NAMES, FEMALE_NAMES, ADDRESSES } from './data/data';
 import { ERROR } from './ERROR';
 import { getRandomBit, getRandomElementOfArray } from './helpers';
 import { MobileNumberOptions, generateMobileNumber } from './mobile-number';
@@ -58,6 +58,7 @@ export const getMockPerson = (
   data: GenerativeData = {
     MALE_NAMES,
     FEMALE_NAMES,
+    ADDRESSES,
   },
 ): MockPerson => {
   const gender = getGender(options.gender);
@@ -78,7 +79,7 @@ export const getMockPerson = (
     name: nameObject,
     gender,
     mobileNumber: generateMobileNumber(options.mobileNumber),
-    address: generateAddress(options.address || {}),
+    address: generateAddress(options.address || {}, data),
     vatId: options.vatId || generateVatId(),
     iban: getIban(options.iban),
   };

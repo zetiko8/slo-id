@@ -1,5 +1,5 @@
 import { ERROR } from './ERROR';
-import { SURNAMES } from './data/data';
+import { SURNAMES, MALE_NAMES, FEMALE_NAMES } from './data/data';
 import { getRandomElementOfArray, isValidInteger } from './helpers';
 import { GENDER, GenerativeData } from './types';
 
@@ -48,14 +48,19 @@ export function generateName(
     throw Error(ERROR.name.surname);
 
   const surname =
-    options.surname ||
-    getNameElement(SURNAMES, options.numberOfSurnames || 1);
+    options.surname || getNameElement(SURNAMES, options.numberOfSurnames || 1);
 
   const firstName =
     options.firstName ||
     (options.gender === GENDER.F
-      ? getNameElement(data.FEMALE_NAMES, options.numberOfNames || 1)
-      : getNameElement(data.MALE_NAMES, options.numberOfNames || 1));
+      ? getNameElement(
+        data.FEMALE_NAMES || FEMALE_NAMES,
+        options.numberOfNames || 1,
+      )
+      : getNameElement(
+        data.MALE_NAMES || MALE_NAMES,
+        options.numberOfNames || 1,
+      ));
 
   return {
     surname,

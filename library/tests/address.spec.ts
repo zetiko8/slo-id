@@ -26,4 +26,9 @@ describe('address', () => {
     expect(person.address.zipCode).toBe('zip code');
     expect(person.address.street).toBe('street');
   });
+  it('(bugfix) return whole city', () => {
+    const person = getMockPerson({}, { ADDRESSES: ['Kolodvorska Cesta 1, 1410 Zagorje Ob Savi'] });
+    expect(person.address.city).toBe('Zagorje Ob Savi');
+    expect(person.address.zipCode).toBe('1410');
+  });
 });
